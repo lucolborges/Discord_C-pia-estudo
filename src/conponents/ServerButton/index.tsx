@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Logo from '../../assets/logo.svg';
+import Logo from '../../assets/Logo.svg';
 
 import { Button } from './styles';
 
@@ -10,24 +10,18 @@ export interface Props {
   hasNotifications?: boolean;
   mentions?: number;
 }
-const ServerButton: React.FC<Props> = ({
-  selected,
-  isHome,
-  hasNotifications,
-  mentions,
-}) => {
+
+const ServerButton: React.FC<Props> = (props : Props) => {
   return (
     <Button
-      isHome={isHome}
-      hasNotifications={hasNotifications}
-      mentions={mentions}
-      className={selected ? 'active' : ''}
+      isHome={props.isHome}
+      hasNotifications={props.hasNotifications}
+      mentions={props.mentions}
+      className={props.selected ? 'active' : ''}
     >
-      {
-        (isHome) ? <img src={Logo} alt="logo" /> : ''
-      }
+      {props.isHome && <img src={Logo} alt="Rocketseat" />}
     </Button>
   );
-}
- 
+};
+
 export default ServerButton;
