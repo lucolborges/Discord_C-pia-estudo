@@ -59,6 +59,7 @@ export const Button = styled.button<Props>`
     color: var(--white);
 
     content: '${props => props.mentions && props.mentions}';
+    display: ${props => props.mentions && props.mentions > 0 ? 'inline' : 'none'};
   }
 
   transition: border-radius .2s, background-color .2s;
