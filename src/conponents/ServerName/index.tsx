@@ -3,13 +3,13 @@ import React from 'react';
 import { Container, Title, ExpandIcon } from './styles';
 
 const ServerName: React.FC = () => {
-  return ( 
+  return (
     <Container>
-      <Title>Server do Rods</Title>
+      <Title>Servidor do Rodz</Title>
 
-      <ExpandIcon/>
+      <ExpandIcon />
     </Container>
   );
-}
- 
+};
+
 export default ServerName;

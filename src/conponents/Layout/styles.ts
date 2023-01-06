@@ -16,7 +16,7 @@ export const Grid = styled.div`
   grid-template-areas: 
     'SL SN CI CI'
     'SL CL CD UL'
-    'Sl UI CD UL';
+    'SL UI CD UL';
   
   height: 100vh;
 `;
