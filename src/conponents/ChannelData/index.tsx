@@ -9,11 +9,23 @@ const ChannelData : React.FC = () => {
     <Container>
       <Messages>
         <ChannelMessage 
-          isBot
-          hasMention
           author='Eros Dog'
           date='08/01/2023'
           content='Hoje é sexta-feira'
+        />
+      </Messages>
+
+      <Messages>
+        <ChannelMessage 
+          isBot
+          hasMention
+          author='Diego Ferreira'
+          date='08/02/2023'
+          content={
+            <>
+              <Mention>@Guilherme Rods</Mention>, me carrega no lol e cs de novo, por favor?
+            </>
+          }
         />
       </Messages>
       

@@ -85,9 +85,11 @@ export const  Avatar = styled.div`
   height: 32px;
 
   background-color: var(--primary);
-  background-color: ${userProps => userProps.isBot ? 'var()' : 'var()' };
-
   border-radius: 50%;
+
+  &.bot {
+    background-color: var(--mention-detail);
+  }
 
   
 `;

@@ -27,6 +27,22 @@ export const Avatar = styled.div`
   border-radius: 50%;
 
   background-color: var(--gray);
+  position: relative;
+
+  &::after {
+    content: '';
+
+    width: 10px;
+    height: 10px;
+
+    background-color: red;
+
+    border-radius: 50%;
+
+    position: absolute;
+    right: -1px;
+    bottom: -1px;
+  }
 `;
 
 export const UserData = styled.div`
