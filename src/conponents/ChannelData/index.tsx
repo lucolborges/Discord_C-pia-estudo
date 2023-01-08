@@ -1,21 +1,31 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 
-import ChannelMessage from '../ChannelMessage';
+import ChannelMessage, { Mention } from '../ChannelMessage';
 
 import {Container, Messages, InputWrapper, Input, InputIcon} from './styles';
 
 const ChannelData : React.FC = () => {
+  const messageRef = useRef() as React.MutableRefObject<HTMLDivElement>;
+
+  useEffect(() => {
+    const div = messageRef.current;
+    if(div){
+      div.scrollTop = div.scrollHeight;
+    }
+  }, [messageRef]);
+
   return (
     <Container>
-      <Messages>
-        <ChannelMessage 
+      <Messages ref={messageRef}>
+
+        {Array.from(Array(15).keys()).map((n) => (
+          <ChannelMessage 
           author='Eros Dog'
           date='08/01/2023'
-          content='Hoje é sexta-feira'
+          content='Hoje é sexta-feira'        
         />
-      </Messages>
+        ))}
 
-      <Messages>
         <ChannelMessage 
           isBot
           hasMention
@@ -26,9 +36,9 @@ const ChannelData : React.FC = () => {
               <Mention>@Guilherme Rods</Mention>, me carrega no lol e cs de novo, por favor?
             </>
           }
-        />
+        /> 
       </Messages>
-      
+
       <InputWrapper>
         <Input placeholder='Conversarem #chat-livre' type="text"/>
         <InputIcon />

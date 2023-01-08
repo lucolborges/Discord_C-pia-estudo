@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Container, Avatar, Header, Content, Message} from './styles';
+export { Mention } from './styles';
 
 export interface Props {
   author: string;
